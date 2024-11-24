@@ -64,7 +64,7 @@
             // MenuUsuario
             // 
             this.MenuUsuario.AutoSize = false;
-            this.MenuUsuario.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
+            this.MenuUsuario.IconChar = FontAwesome.Sharp.IconChar.UsersGear;
             this.MenuUsuario.IconColor = System.Drawing.Color.Black;
             this.MenuUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.MenuUsuario.IconSize = 50;
@@ -208,6 +208,7 @@
             this.Controls.Add(this.MenuTitulo);
             this.MainMenuStrip = this.Menu;
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
