@@ -21,10 +21,5 @@ namespace SistemaVentas
         {
 
         }
-
-        private void Inicio_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
