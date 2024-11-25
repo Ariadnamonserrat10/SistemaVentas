@@ -119,7 +119,7 @@
             this.btnIngresar.IconColor = System.Drawing.Color.White;
             this.btnIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnIngresar.IconSize = 21;
-            this.btnIngresar.Location = new System.Drawing.Point(284, 188);
+            this.btnIngresar.Location = new System.Drawing.Point(261, 188);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(109, 34);
             this.btnIngresar.TabIndex = 7;
