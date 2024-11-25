@@ -191,7 +191,7 @@
             // 
             // Contenedor
             // 
-            this.Contenedor.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Contenedor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Contenedor.Location = new System.Drawing.Point(0, 130);
             this.Contenedor.Name = "Contenedor";
@@ -207,6 +207,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.MenuTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.Menu;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
