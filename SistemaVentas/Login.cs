@@ -34,5 +34,10 @@ namespace SistemaVentas
             txtClave.Text = "";
             this.Show();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
