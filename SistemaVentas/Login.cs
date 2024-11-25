@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntida;
+using CapaNegocios;
 
 namespace SistemaVentas
 {
@@ -24,15 +26,26 @@ namespace SistemaVentas
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Inicio form = new Inicio();
-            form.Show();
-            this.Hide();
-            form.FormClosing += frm_closing;
+            List<Usuario> TEST = new CN_Usuario().Listar();
+            Usuario usario = new CN_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtClave.Text).FirstOrDefault();
+            if (usario != null)
+            {
+                Inicio form = new Inicio();
+                form.Show();
+                this.Hide();
+                form.FormClosing += frm_closing;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
-        private void frm_closing(object sender, FormClosingEventArgs e) {
+        private void frm_closing(object sender, FormClosingEventArgs e)
+        {
             txtDocumento.Text = "";
             txtClave.Text = "";
             this.Show();
         }
     }
 }
+
