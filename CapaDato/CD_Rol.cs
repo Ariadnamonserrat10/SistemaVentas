@@ -9,40 +9,34 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntida;
-using System.Reflection;
-
-
 namespace CapaDato
 {
-    public  class CD_Permiso
+    public class CD_Rol
     {
-        public List<Permiso> Listar(int idusuario)
+        public List<ROL> Listar()
         {
-            List<Permiso> lista = new List<Permiso>();
+            List<ROL> lista = new List<ROL>();
             using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    StringBuilder query= new StringBuilder();
-                    query.AppendLine("select p.IdRol,p.NombreMenu from PERMISO p");
-                    query.AppendLine("inner join ROL r on r.IdRol = p.IdRol");
-                    query.AppendLine("inner join USUARIO u on u.IdRol = r.IdRol");
-                    query.AppendLine("where u.IdUsuario = @idusuario");
-                    
-                  
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select IdRol,Descripcion from ROL");
+             
+
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
-                    cmd.Parameters.AddWithValue("idusuario", idusuario);
+                    
                     cmd.CommandType = CommandType.Text;
                     conexion.Open();
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            lista.Add(new Permiso()
+                            lista.Add(new ROL()
                             {
-                                oROL =new ROL() { IdRol = Convert.ToInt32(dr["IdROL"])}, 
-                                NombreMenu = dr["NombreMenu"].ToString(),
-                                
+                                IdRol= Convert.ToInt32(dr["IdRol"]),
+                                Descripcion = dr["Descripcion"].ToString()
+
                             });
 
                         }
@@ -50,11 +44,12 @@ namespace CapaDato
                 }
                 catch (Exception ex)
                 {
-                    lista = new List<Permiso>();
+                    lista = new List<ROL>();
                 }
             }
             return lista;
         }
     }
 }
+    
     
