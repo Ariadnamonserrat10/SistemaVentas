@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-
+using CapaEntida;
+using CapaNegocios;
 namespace SistemaVentas
 {
     public partial class Inicio : Form
     {
+        private static Usuario usuarioActual;
 
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
 
-        public Inicio()
+        public Inicio(Usuario objusuario=null)
         {
+            if (objusuario == null) usuarioActual = new Usuario() { NombreCompleto = "ADMIN PREDEFINIDO" ,IdUsuario=1}; 
+            else 
+            usuarioActual= objusuario;
             InitializeComponent();
         }
 
@@ -98,6 +103,27 @@ namespace SistemaVentas
         private void MenuReportes_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new FrmReportes());
+        }
+
+        private void MenuVentas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.IdUsuario);
+            foreach (IconMenuItem iconmenu in Menu.Items)
+            {
+
+                bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
+                if (encontrado == false)
+                {
+                    iconmenu.Visible = false;
+                }
+         
+            }
+            LBLUsuario.Text =usuarioActual.NombreCompleto;
         }
     }
 }

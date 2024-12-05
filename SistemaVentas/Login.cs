@@ -27,10 +27,11 @@ namespace SistemaVentas
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             List<Usuario> TEST = new CN_Usuario().Listar();
-            Usuario usario = new CN_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtClave.Text).FirstOrDefault();
-            if (usario != null)
+            Usuario usuario = new CN_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtClave.Text).FirstOrDefault();
+            if (usuario != null)
             {
-                Inicio form = new Inicio();
+                Inicio form = new Inicio(usuario);
+
                 form.Show();
                 this.Hide();
                 form.FormClosing += frm_closing;

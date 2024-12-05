@@ -134,6 +134,7 @@
             this.MenuVentas.Size = new System.Drawing.Size(122, 69);
             this.MenuVentas.Text = "Ventas";
             this.MenuVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuVentas.Click += new System.EventHandler(this.MenuVentas_Click);
             // 
             // SubMregistrarV
             // 
@@ -141,7 +142,7 @@
             this.SubMregistrarV.IconColor = System.Drawing.Color.Black;
             this.SubMregistrarV.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMregistrarV.Name = "SubMregistrarV";
-            this.SubMregistrarV.Size = new System.Drawing.Size(129, 22);
+            this.SubMregistrarV.Size = new System.Drawing.Size(180, 22);
             this.SubMregistrarV.Text = "Registrar";
             this.SubMregistrarV.Click += new System.EventHandler(this.SubMregistrarV_Click);
             // 
@@ -151,7 +152,7 @@
             this.VerDetalleVenta.IconColor = System.Drawing.Color.Black;
             this.VerDetalleVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.VerDetalleVenta.Name = "VerDetalleVenta";
-            this.VerDetalleVenta.Size = new System.Drawing.Size(129, 22);
+            this.VerDetalleVenta.Size = new System.Drawing.Size(180, 22);
             this.VerDetalleVenta.Text = "Ver Detalle";
             this.VerDetalleVenta.Click += new System.EventHandler(this.VerDetalleVenta_Click);
             // 
@@ -316,6 +317,7 @@
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.ResumeLayout(false);
