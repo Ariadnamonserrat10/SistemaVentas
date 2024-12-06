@@ -139,7 +139,7 @@ namespace CapaDato
                 using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_ELIMINAUSUARIO", conexion);
+                    SqlCommand cmd = new SqlCommand("SP_ELIMINARRUSUARIO", conexion);
                     cmd.Parameters.AddWithValue("IdUsuario", obj.IdUsuario);
                     
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
