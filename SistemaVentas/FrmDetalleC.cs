@@ -16,5 +16,10 @@ namespace SistemaVentas
         {
             InitializeComponent();
         }
+
+        private void FrmDetalleC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
