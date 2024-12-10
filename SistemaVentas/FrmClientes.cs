@@ -16,5 +16,15 @@ namespace SistemaVentas
         {
             InitializeComponent();
         }
+
+        private void FrmClientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
